@@ -1,6 +1,6 @@
 <template>
   <div class="subjectList">
-    <h1>{{ msg }}-----{{getData}}</h1>
+    <h1>{{ msg }}</h1>
     <ul v-for = 'subject in subjectList' @click = "searchSubjectDetail(subject.url)">
         <li>{{subject.title}}</li>       
     </ul>
@@ -20,7 +20,7 @@ export default {
     this.$http.get('http://121.249.216.217/api/subject/subject', function (data) {
       this.subjectList = data
     }).then(function (response) {
-      console.log(response.status)
+      this.getData = response.status
     }, function (response) {
       console.log('get fails!')
     })

@@ -21,6 +21,8 @@ export default {
     this.$http.get(this.getCoursePath, function (data) {
       console.log(data) // 这里获得了当前课程的数据包
       this.courseGet = data
+      // 向Vue派发事件
+      this.$dispatch('notify_route', 'enrollPage')
     })
   }
 }

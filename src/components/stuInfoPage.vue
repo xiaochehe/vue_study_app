@@ -15,6 +15,9 @@ export default {
       // its initial state.
       msg: '这是stuInfoPage组件！'
     }
+  },
+  ready: function () {
+    this.$dispatch('notify_route', 'stuInfoPage')
   }
 }
 </script>

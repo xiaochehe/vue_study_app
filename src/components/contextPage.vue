@@ -10,6 +10,10 @@ export default {
     return {
       msg: '这是contextPage组件！'
     }
+  },
+  ready: function () {
+    this.$dispatch('notify_route', 'contextPage')
+    console.log('contextPage')
   }
 }
 </script>

@@ -1,7 +1,7 @@
 
 <template>
     <div>
-      <header-bar></header-bar> 
+      <header-bar :now-route = nowRouteview></header-bar> 
       <a v-link = "{path:'/login'}">loginPage!</a> 
       <a v-link = "{path:'/stuInfo/123'}">stuInfoPage!</a>
       <a v-link = "{path:'/'}">homePage!</a>
@@ -13,6 +13,17 @@
   export default{
     components: {
       headerBar
+    },
+    data () {
+      return {
+        nowRouteview: ''
+      }
+    },
+    events: {
+      'notify_route': function (routeName) {
+        this.nowRouteview = routeName
+        console.log(routeName)
+      }
     }
   }
 </script>

@@ -1,7 +1,6 @@
 <template>
   <div class="homePage">
     <h1>{{ msg }}</h1>
-    <h1>从子组件subjectList传来的地址：{{subjectUrl}}</h1>
     <my-swipe></my-swipe>
     <subject-detail :from-parenturl = subjectUrl></subject-detail>
     <subject-List></subject-List> 
@@ -15,7 +14,7 @@ import subjectList from './childVue/subjectList'
 export default {
   data () {
     return {
-      msg: '这是homePage组件！这下面还有三个子组件：',
+      msg: '这是homePage组件!',
       courseTitle: '',
       courseList: [],
       subjectUrl: ''
@@ -30,6 +29,9 @@ export default {
     event_notify: function (msg) {
       this.subjectUrl = msg
     }
+  },
+  ready: function () {
+    this.$dispatch('notify_route', 'homePage')
   }
 }
 </script>

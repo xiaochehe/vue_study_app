@@ -1,7 +1,6 @@
 <template>
   <div class="subjectDetail">
     <h1>{{ msg }}</h1>
-    <h1>从父组件homePage传来的props：{{fromParenturl}}</h1>
     <div v-for = "obj in courseFilter" v-link = "'../courseEnroll/' + obj.url.split('/').reverse()[1]">
         <img src="../../assets/logo.png">
         <span>这里是【{{obj.title}}】的简介！</span>
