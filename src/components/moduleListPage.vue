@@ -19,8 +19,7 @@ export default {
     this.$http.get(this.getCoursePath, function (data) {
       this.moduleGet = data.modules
       this.courseGetId = this.$route.params.courseNumber
-      console.log(this.moduleGet)
-      // 像app.vue派发事件
+      // 向app.vue派发事件
       this.$dispatch('notify_route', 'moduleListPage')
     })
   }

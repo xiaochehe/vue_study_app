@@ -4,27 +4,20 @@
    <label>密码：</label><input placeholder="请输入密码" v-model = "userPassword"></input>
   </div>
    <button @click = "postForm">登陆</button>
-   <h2>学号是：{{userName}}</h2>
-   <h2>密码是：{{userPassword}}</h2>
-   <h2>userObject:{{userObject | json}}</h2>
 </template>
 
 <script>
 export default {
   data () {
     return {
-      msg: '这是loginPage组件！',
-      userName: '',
-      userPassword: '',
-      userObject: []
+      msg: '这是loginPage组件！'
     }
   },
   methods: {
     postForm: function () {
-      this.userObject.length = 0
-      this.userObject.push({'userName': this.userName})
-      this.userObject.push({'userPassword': this.userPassword})
-      this.$http.post('http://121.249.216.217/api/token/', this.userObject).then(function (data) {
+      this.$http.post('http://121.249.216.217/account/login/', {username: '113', password: 'admin113'}).then(function (data) {
+        console.log('post成功！')
+      }, function (data) {
         console.log(data)
       })
     }

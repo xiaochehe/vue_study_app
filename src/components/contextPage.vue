@@ -13,7 +13,6 @@ export default {
   },
   ready: function () {
     this.$dispatch('notify_route', 'contextPage')
-    console.log('contextPage')
   }
 }
 </script>

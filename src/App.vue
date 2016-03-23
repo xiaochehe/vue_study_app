@@ -22,7 +22,6 @@
     events: {
       'notify_route': function (routeName) {
         this.nowRouteview = routeName
-        console.log(routeName)
       }
     }
   }

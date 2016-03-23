@@ -47,4 +47,12 @@ router.map({
     component: moduleListPage
   }
 })
+// vue.http.headers.common['Content-Type'] = 'application/x-www-form-urlencoded'
+vue.http.headers.common['X-CSRFTOKEN'] = 'xkwX9Xgz8WlNXCs4ENyvc6Cqj322eI3j'
+// vue.http.headers.common['Access-Control-Allow-Origin'] = 'sadj'
+// var request = new XMLHttpRequest()
+// request.open('POST', 'http://121.249.216.217/account/login/', true)
+// request.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
+// request.send('username=113&password=admin113')
+
 router.start(App, '#app')
